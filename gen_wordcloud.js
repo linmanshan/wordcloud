@@ -31,7 +31,7 @@ function readtext() {
 
     var frequency_list = [];
     for(var word in map){
-      if(map[word] > 3){
+      if(map[word] > 2){
         var temp = {"text":word,"size":map[word]*2.5};
         frequency_list.push(temp);  
       }
