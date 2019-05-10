@@ -19,3 +19,8 @@
    } else {
       alert("Your browser is too old to support HTML5 File API");
    }
+
+   function TextChange(){
+      // $("#content").val("我要改变你的内容");
+      document.getElementById('show-text').innerHTML=document.getElementById('show-text').value
+   }

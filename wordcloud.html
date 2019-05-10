@@ -5,73 +5,79 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="style.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="https://d3js.org/d3-color.v1.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="d3.layout.cloud.js"></script>
   <script src="jscolor.js"></script>
   <script src="textbox.js"></script>
   <script src="gen_wordcloud.js"></script>
-</head>
 
 <style>
-    body {
-        font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
-    }
-    .legend {
-        border: 1px solid #555555;
-        border-radius: 5px 5px 5px 5px;
-        font-size: 0.8em;
-        margin: 10px;
-        padding: 8px;
-    }
-    .bld {
-        font-weight: bold;
-    }
+    
 </style>
 
 <body>
 
-<div class="container">
+<div class="main">
   <h1>WordCloud</h1>
-  <div>Background Color: <input class="jscolor" value="ab2567"></div>
-  <div>Font:</div>
-      <div class="container">
-        <form>
-          <label class="radio-inline">
-            <input type="radio" name="optradio" checked>Option 1
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">Option 2
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">Option 3
-          </label>
-        </form>
-      </div>
-  <div>Font size:</div>
-      <div class="container">
-        <form>
-          <label class="radio-inline">
-            <input type="radio" name="optradio" checked>Option 1
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">Option 2
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">Option 3
-          </label>
-        </form>
-      </div>
+  <div>Background Color: <input id="color" class="jscolor" value="000000"></div>
+  
+  <div class="Font">
+    <form>
+      <label>Font:  </label>
+      <label class="radio-inline">
+        <input type="radio" name="optradio" value="Impact" checked>Impact
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="optradio" value="Arial">Arial
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="optradio" value="Helvetica">Helvetica
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="optradio" value="Georgia">Georgia
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="optradio" value="Serif">Serif
+      </label>
+    </form>
+  </div>
+
+  <div class="Size">
+    <form>
+      <label>Font size:   </label>
+      <label class="radio-inline">
+        <input type="radio" name="fontsize" value=60 >Small
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="fontsize" value=110 checked>Medium
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="fontsize" value=170>Large
+      </label>
+    </form>
+  </div>
+
   <div class="upload-wrapper">
       <header>
          <input type="file" onchange="showFile()">
       </header>
-      <textarea name="paste" rows="8" cols="50" id='show-text'></textarea>
+      <textarea name="paste" rows="8" cols="50" id='show-text' onchange="TextChange()"></textarea>
   </div>
  
-  <div><button onclick="readtext()">generate</button></div>
+  <div><button onclick="drawWordCloud()">generate</button></div>
+  <br/>
+  <div id="words"></div>
+</div>
 </body>
+
+<script>
+
+</script>
+
 </html>
