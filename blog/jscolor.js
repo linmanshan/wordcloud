@@ -23,21 +23,10 @@ function controlshow(){
 	}
 
 }
-function changefont(fontstyle){
-
-	document.getElementById('fontbutton').innerHTML=fontstyle+'<span class="mui-caret"></span>'
-
-}
-function changefontsize(fontstyle){
-
-	document.getElementById('fontsizebutton').innerHTML=fontstyle+'<span class="mui-caret"></span>'
-
-}
 
 
-function changesize(){
 
-}
+
 if (!window.jscolor) { window.jscolor = (function () {
 
 

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Word Cloud Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="d3.layout.cloud.js"></script>
+    <script src="jscolor.js"></script>
+    <script src="textbox.js"></script>
+    <script src="gen_wordcloud.js"></script>
+    
+  </head>
+  <body>
+
+    <div class="main">
+      <h1>WordCloud</h1>
+      <div>Background Color: <input id="color" class="jscolor" value="000000"></div>
+      
+      <div class="Font">
+        <form>
+          <label>Font:  </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Impact" checked>Impact
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Arial">Arial
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Helvetica">Helvetica
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Georgia">Georgia
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Serif">Serif
+          </label>
+        </form>
+      </div>
+
+      <div class="Size">
+        <form>
+          <label>Font size:   </label>
+          <label class="radio-inline">
+            <input type="radio" name="fontsize" value=60 >Small
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="fontsize" value=110 checked>Medium
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="fontsize" value=170>Large
+          </label>
+        </form>
+      </div>
+
+      <div class="upload-wrapper">
+          <header>
+             <input type="file" onchange="showFile()">
+          </header>
+          <textarea name="paste" rows="8" cols="50" id='show-text' onchange="TextChange()"></textarea>
+      </div>
+     
+      <div><button onclick="drawWordCloud()">generate</button></div>
+      <br/>
+      <div id="words"></div>
+    </div>
+
+  </body>
+</html>

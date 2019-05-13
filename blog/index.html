@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="mui.min.css" rel="stylesheet" type="text/css" />
     <link href="static/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="mui.min.js"></script>
     <script src="mui-combined.js"></script>
     <script src="jscolor.js"></script>
     <script src="textbox.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="gen_wordcloud.js"></script>
+    <script src="d3.layout.cloud.js"></script>
+
 
   </head>
   <body>
@@ -44,10 +52,9 @@
           <span class="mui-caret"></span>
         </button>
         <ul class="mui-dropdown__menu">
-          <li onclick="changefontsize('small')"><a href="#">small</a></li>
-          <li onclick="changefontsize('medium')"><a href="#">medium</a></li>
-          <li onclick="changefontsize('large')"><a href="#">large</a></li>
-          <li onclick="changefontsize('huge')"><a href="#">huge</a></li>
+          <li class="radio-inline" onclick="changefontsize('small',60)" ><a href="#">small</a></li>
+          <li class="radio-inline" onclick="changefontsize('medium',110)" ><a href="#">medium</a></li>
+          <li class="radio-inline" onclick="changefontsize('large',170)" ><a href="#">large</a></li>
         </ul>
       </div>
 
@@ -64,7 +71,7 @@
                <input type="file" onchange="showFile()">
             </header>
             <textarea name="paste" rows="10" cols="80" id='show-text' onchange="TextChange()"></textarea>
-            <div style='padding-left:450px'><button style='background-color: #e57373;' class="mui-btn mui-btn--accent">GENERATE</button></div>
+            <div style='padding-left:450px'><button style='background-color: #e57373;' class="mui-btn mui-btn--accent" onclick="drawWordCloud()">GENERATE</button></div>
         </div>
           <!-- <br>
           <div class="mui--text-headline">Sample Text</div>
@@ -76,6 +83,8 @@
           <br>
           <div class="mui--text-black-54 mui--text-body2"><b>RESULT</b></div>
           <div class="mui-divider"></div>
+          <br>
+          <div id="words"></div>
         </div>
       </div>
     </div>
