@@ -33,28 +33,42 @@
           <input id="color" class="jscolor" value="000000">
         </ul>
       </div>
+
       <div class="mui-dropdown">
         <button id='fontbutton' style='width:154.45px;' class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
           Font
           <span class="mui-caret"></span>
         </button>
         <ul class="mui-dropdown__menu">
-          <li onclick="changefont('Impact')"><a href="#">Impact</a></li>
-          <li onclick="changefont('Arial')"><a href="#">Arial</a></li>
+          <li style='font:Impact' onclick="changefont('Impact')"><a href="#">Impact</a></li>
+          <li style='font:Arial'onclick="changefont('Arial')"><a href="#">Arial</a></li>
           <li onclick="changefont('Helvetica')"><a href="#">Helvetica</a></li>
           <li onclick="changefont('Georgia')"><a href="#">Georgia</a></li>
           <li onclick="changefont('Serif')"><a href="#">Serif</a></li>
         </ul>
       </div>
+
       <div class="mui-dropdown">
         <button id='fontsizebutton' style='width:154.45px;'class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
           FontSize
           <span class="mui-caret"></span>
         </button>
         <ul class="mui-dropdown__menu">
-          <li class="radio-inline" onclick="changefontsize('small',60)" ><a href="#">small</a></li>
-          <li class="radio-inline" onclick="changefontsize('medium',110)" ><a href="#">medium</a></li>
-          <li class="radio-inline" onclick="changefontsize('large',170)" ><a href="#">large</a></li>
+          <li onclick="changefontsize('small',50)" ><a href="#">small</a></li>
+          <li onclick="changefontsize('medium',80)" ><a href="#">medium</a></li>
+          <li onclick="changefontsize('large',110)" ><a href="#">large</a></li>
+          <li onclick="changefontsize('huge',150)" ><a href="#">huge</a></li>
+        </ul>
+      </div>
+
+      <div class="mui-dropdown">
+        <button id='spiralbutton' style='width:154.45px;'class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
+          Spiral Shape
+          <span class="mui-caret"></span>
+        </button>
+        <ul class="mui-dropdown__menu">
+          <li onclick="changespiral('archimedean')" ><a href="#">archimedean</a></li>
+          <li onclick="changespiral('rectangular')" ><a href="#">rectangular</a></li>
         </ul>
       </div>
 

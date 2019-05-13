@@ -8,8 +8,9 @@ function isNumber(val) {
     }
 }
 
-var checkedSize = 100
+var checkedSize = 80
 var checkedFont = "Impact"
+var checkedshape = "archimedean"
 
 function changefont(fontstyle){
 
@@ -17,6 +18,14 @@ function changefont(fontstyle){
     checkedFont = fontstyle
 
 }
+
+function changespiral(shape){
+
+    document.getElementById('spiralbutton').innerHTML=shape+'<span class="mui-caret"></span>'
+    checkedshape = shape
+
+}
+
 function changefontsize(fontstyle,value){
 
     document.getElementById('fontsizebutton').innerHTML=fontstyle+'<span class="mui-caret"></span>'
@@ -50,8 +59,8 @@ function drawWordCloud(){
       }
 
     var svg_location = "#words";
-    var width = 1000;
-    var height = 500;
+    var width = 1100;
+    var height = 600;
 
     var fill = d3.scaleOrdinal(d3.schemeSpectral[9]);
 
@@ -71,6 +80,7 @@ function drawWordCloud(){
       .fontSize(function(d) { return xScale(+d.value); })
       .text(function(d) { return d.key; })
       .rotate(function()  { return ~~(Math.random() * 2) * 90; })
+      .spiral(checkedshape)
       .font("Impact")
       .on("end", draw)
       .start();
