@@ -39,6 +39,7 @@ function drawWordCloud() {
     alert("Please Enter Text First");
     return 0;
   }
+  document.getElementById("showfilter").style.display = "inline";
   var word_count = {};
 
   var words = text_string.split(/[ '\-\(\)\*":;\[\]|{},.!?]+/);
