@@ -39,7 +39,9 @@ function drawWordCloud() {
     alert("Please Enter Text First");
     return 0;
   }
+  document.getElementById("filter").value = 0;
   document.getElementById("showfilter").style.display = "inline";
+
   var word_count = {};
 
   var words = text_string.split(/[ '\-\(\)\*":;\[\]|{},.!?]+/);
@@ -91,7 +93,7 @@ function drawWordCloud() {
       return d.key;
     })
     .rotate(function() {
-      return ~~(Math.random() * 2) * 90;
+      return ~~(Math.random() * 2) * 0;
     })
     .spiral(checkedshape)
     .font("Impact")
