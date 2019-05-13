@@ -1,0 +1,83 @@
+  <!doctype html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="mui.min.css" rel="stylesheet" type="text/css" />
+    <link href="static/style.css" rel="stylesheet" type="text/css" />
+    <script src="mui.min.js"></script>
+    <script src="mui-combined.js"></script>
+    <script src="jscolor.js"></script>
+    <script src="textbox.js"></script>
+
+  </head>
+  <body>
+
+    <div id="sidebar">
+      <div class="mui--text-white mui--text-display1 mui--align-vertical">Word Cloud </div>
+      <div class="mui-dropdown">
+        <button style='margin-top:30px;width:154.45px;' class="mui-btn mui-btn--primary" data-mui-toggle="dropdown" onclick="controlshow()">
+          Background
+          <span class="mui-caret"></span>
+        </button>
+        <ul id='selector' style='display: none'>
+          <input id="color" class="jscolor" value="000000">
+        </ul>
+      </div>
+      <div class="mui-dropdown">
+        <button id='fontbutton' style='width:154.45px;' class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
+          Font
+          <span class="mui-caret"></span>
+        </button>
+        <ul class="mui-dropdown__menu">
+          <li onclick="changefont('Impact')"><a href="#">Impact</a></li>
+          <li onclick="changefont('Arial')"><a href="#">Arial</a></li>
+          <li onclick="changefont('Helvetica')"><a href="#">Helvetica</a></li>
+          <li onclick="changefont('Georgia')"><a href="#">Georgia</a></li>
+          <li onclick="changefont('Serif')"><a href="#">Serif</a></li>
+        </ul>
+      </div>
+      <div class="mui-dropdown">
+        <button id='fontsizebutton' style='width:154.45px;'class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
+          FontSize
+          <span class="mui-caret"></span>
+        </button>
+        <ul class="mui-dropdown__menu">
+          <li onclick="changefontsize('small')"><a href="#">small</a></li>
+          <li onclick="changefontsize('medium')"><a href="#">medium</a></li>
+          <li onclick="changefontsize('large')"><a href="#">large</a></li>
+          <li onclick="changefontsize('huge')"><a href="#">huge</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div id="content" class="mui-container-fluid">
+      <div class="mui-row">
+        <div class="mui-col-sm-10 mui-col-sm-offset-1">
+          <br>
+          <br>
+          <div class="mui--text-black-54 mui--text-body2"><b>ENTER TEXT</b></div>
+          <div class="mui-divider"></div>
+          <div class="upload-wrapper">
+            <header>
+               <input type="file" onchange="showFile()">
+            </header>
+            <textarea name="paste" rows="10" cols="80" id='show-text' onchange="TextChange()"></textarea>
+            <div style='padding-left:450px'><button style='background-color: #e57373;' class="mui-btn mui-btn--accent">GENERATE</button></div>
+        </div>
+          <!-- <br>
+          <div class="mui--text-headline">Sample Text</div>
+          <div class="mui--text-black-54">By Team MUI 3 days ago</div>
+          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis aliquam ipsum sed dignissim. Sed ac accumsan odio. Vivamus tristique dignissim neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc cursus felis nec purus condimentum vestibulum. Donec mauris nisi, sollicitudin eget iaculis id, suscipit id odio.</div>
+          <br>
+          <br> -->
+          <br>
+          <br>
+          <div class="mui--text-black-54 mui--text-body2"><b>RESULT</b></div>
+          <div class="mui-divider"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
