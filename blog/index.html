@@ -15,6 +15,8 @@
     <script src="textbox.js"></script>
     <script src="https://d3js.org/d3-color.v1.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="gen_wordcloud.js"></script>
     <script src="d3.layout.cloud.js"></script>
 
@@ -47,7 +49,7 @@
           <span class="mui-caret"></span>
         </button>
         <ul id='selector' style='display: none'>
-          <input id="color" class="jscolor" value="000000">
+          <input id="color" class="jscolor" value="000000" onchange="changecolor()">
         </ul>
       </div>
 
@@ -57,11 +59,11 @@
           <span class="mui-caret"></span>
         </button>
         <ul class="mui-dropdown__menu">
-          <li style='font:Impact' onclick="changefont('Impact')"><a href="#">Impact</a></li>
-          <li style='font:Arial'onclick="changefont('Arial')"><a href="#">Arial</a></li>
-          <li onclick="changefont('Helvetica')"><a href="#">Helvetica</a></li>
-          <li onclick="changefont('Georgia')"><a href="#">Georgia</a></li>
-          <li onclick="changefont('Serif')"><a href="#">Serif</a></li>
+          <li onclick="changefont('Impact')"><a href="#"><font face='Impact'>Impact</font></a></li>
+          <li onclick="changefont('Arial')"><a href="#"><font face='Arial'>Arial</font></a></li>
+          <li onclick="changefont('Helvetica')"><a href="#"><font face='Helvetica'>Helvetica</font></a></li>
+          <li onclick="changefont('Georgia')"><a href="#"><font face='Georgia'>Georgia</font></a></li>
+          <li onclick="changefont('Serif')"><a href="#"><font face='Serif'>Serif</font></a></li>
         </ul>
       </div>
 
@@ -72,8 +74,8 @@
         </button>
         <ul class="mui-dropdown__menu">
           <li onclick="changefontsize('small',50)" ><a href="#">small</a></li>
-          <li onclick="changefontsize('medium',80)" ><a href="#">medium</a></li>
-          <li onclick="changefontsize('large',110)" ><a href="#">large</a></li>
+          <li onclick="changefontsize('medium',90)" ><a href="#">medium</a></li>
+          <li onclick="changefontsize('large',120)" ><a href="#">large</a></li>
           <li onclick="changefontsize('huge',150)" ><a href="#">huge</a></li>
         </ul>
       </div>
@@ -84,8 +86,25 @@
           <span class="mui-caret"></span>
         </button>
         <ul class="mui-dropdown__menu">
-          <li onclick="changespiral('archimedean')" ><a href="#">archimedean</a></li>
           <li onclick="changespiral('rectangular')" ><a href="#">rectangular</a></li>
+          <li onclick="changespiral('archimedean')" ><a href="#">archimedean</a></li>
+        </ul>
+      </div>
+
+      <div class="mui-dropdown">
+        <button id='themebutton' style='width:154.45px;'class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
+         <b> Theme</b>
+          <span class="mui-caret"></span>
+        </button>
+        <ul class="mui-dropdown__menu">
+          <li onclick="changetheme('clasical')" ><a href="#">clasical</a></li>
+          <li onclick="changetheme('blue')" ><a href="#">blue</a></li>
+          <li onclick="changetheme('red')" ><a href="#">red</a></li>
+          <li onclick="changetheme('green')" ><a href="#">green</a></li>
+          <li onclick="changetheme('light1')" ><a href="#">light1</a></li>
+          <li onclick="changetheme('light2')" ><a href="#">light2</a></li>
+          <li onclick="changetheme('dark1')" ><a href="#">dark1</a></li>
+          <li onclick="changetheme('dark2')" ><a href="#">dark2</a></li>
         </ul>
       </div>
 
@@ -104,19 +123,18 @@
             <textarea name="paste" rows="10" cols="80" id='show-text' onchange="TextChange()"></textarea>
             <div style='padding-left:450px'><button style='background-color: #e57373;' class="mui-btn mui-btn--accent" onclick="drawWordCloud()">GENERATE</button></div>
         </div>
-          <!-- <br>
-          <div class="mui--text-headline">Sample Text</div>
-          <div class="mui--text-black-54">By Team MUI 3 days ago</div>
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis aliquam ipsum sed dignissim. Sed ac accumsan odio. Vivamus tristique dignissim neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc cursus felis nec purus condimentum vestibulum. Donec mauris nisi, sollicitudin eget iaculis id, suscipit id odio.</div>
-          <br>
-          <br> -->
           <br>
           <br>
           <div class="mui--text-black-54 mui--text-body2"><b>RESULT</b></div>
           <div class="mui-divider"></div>
+          <br>
+          <div> Rotate Angle</div>
           <div id='showfilter' style='display: none;'>
-          <input class="extern-filter-slider" type="range" id="filter" value=0 max=180 onmouseup="generatecloud2()">
-        </div>
+            0°
+          <input class="extern-filter-slider" type="range" id="filter" value=90 max=180 onmouseup="changeangle()">
+          180°
+          </div>
+          <br>
           <br>
           <div id="words"></div>
         </div>
