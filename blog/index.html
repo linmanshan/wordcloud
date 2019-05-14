@@ -121,20 +121,22 @@
                <input type="file" onchange="showFile()">
             </header>
             <textarea name="paste" rows="10" cols="80" id='show-text' onchange="TextChange()"></textarea>
-            <div style='padding-left:450px'><button style='background-color: #e57373;' class="mui-btn mui-btn--accent" onclick="drawWordCloud()">GENERATE</button></div>
+             <div style='padding-left:320px;display: inline-block;'><button style='background-color: #e57373;' class="mui-btn mui-btn--accent" onclick="example()">EXAMPLE</button></div>
+            <div style='display:inline-block;'><button style='background-color: #e57373;' class="mui-btn mui-btn--accent" onclick="drawWordCloud()">GENERATE</button></div>
+
+           
         </div>
           <br>
           <br>
           <div class="mui--text-black-54 mui--text-body2"><b>RESULT</b></div>
           <div class="mui-divider"></div>
-          <br>
-          <div> Rotate Angle</div>
           <div id='showfilter' style='display: none;'>
+            <div> Rotate Angle</div>
             0°
           <input class="extern-filter-slider" type="range" id="filter" value=90 max=180 onmouseup="changeangle()">
           180°
           </div>
-          <br>
+         
           <br>
           <div id="words"></div>
         </div>
